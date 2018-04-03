@@ -51,6 +51,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.ofdExcel = new System.Windows.Forms.OpenFileDialog();
+            this.testAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tcMain.SuspendLayout();
             this.tpExcel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerExcel)).BeginInit();
@@ -74,6 +75,7 @@
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTest1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcMain
@@ -326,6 +328,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.testAppToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(891, 24);
@@ -339,6 +343,13 @@
             this.statusStrip1.Size = new System.Drawing.Size(891, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // testAppToolStripMenuItem
+            // 
+            this.testAppToolStripMenuItem.Name = "testAppToolStripMenuItem";
+            this.testAppToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.testAppToolStripMenuItem.Text = "Test App";
+            this.testAppToolStripMenuItem.Click += new System.EventHandler(this.testAppToolStripMenuItem_Click);
             // 
             // DashboardForm
             // 
@@ -379,6 +390,8 @@
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsTest1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +422,6 @@
         private System.Windows.Forms.DataGrid dataGrid1;
         private System.Windows.Forms.Button BtnSaveData;
         private ClassLibraryUMT.dsTest dsTest1;
+        private System.Windows.Forms.ToolStripMenuItem testAppToolStripMenuItem;
     }
 }

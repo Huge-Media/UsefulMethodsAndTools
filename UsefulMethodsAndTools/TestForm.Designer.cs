@@ -32,10 +32,13 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tcTest = new System.Windows.Forms.TabControl();
             this.tpDatatoJSON = new System.Windows.Forms.TabPage();
-            this.tpOther = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgImportExcel = new System.Windows.Forms.DataGrid();
             this.brnLoadExcel = new System.Windows.Forms.Button();
+            this.tpOther = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.rtbJSON = new System.Windows.Forms.RichTextBox();
+            this.btnSaveJson = new System.Windows.Forms.Button();
             this.tcTest.SuspendLayout();
             this.tpDatatoJSON.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -43,6 +46,10 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgImportExcel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -85,16 +92,6 @@
             this.tpDatatoJSON.TabIndex = 0;
             this.tpDatatoJSON.Text = "Data to JSON";
             // 
-            // tpOther
-            // 
-            this.tpOther.BackColor = System.Drawing.Color.Honeydew;
-            this.tpOther.Location = new System.Drawing.Point(4, 22);
-            this.tpOther.Name = "tpOther";
-            this.tpOther.Padding = new System.Windows.Forms.Padding(3);
-            this.tpOther.Size = new System.Drawing.Size(822, 486);
-            this.tpOther.TabIndex = 1;
-            this.tpOther.Text = "Other";
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -104,10 +101,11 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.dgImportExcel);
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnSaveJson);
             this.splitContainer1.Panel2.Controls.Add(this.brnLoadExcel);
             this.splitContainer1.Size = new System.Drawing.Size(1004, 595);
             this.splitContainer1.SplitterDistance = 533;
@@ -120,7 +118,7 @@
             this.dgImportExcel.HeaderForeColor = System.Drawing.SystemColors.ControlText;
             this.dgImportExcel.Location = new System.Drawing.Point(0, 0);
             this.dgImportExcel.Name = "dgImportExcel";
-            this.dgImportExcel.Size = new System.Drawing.Size(1004, 533);
+            this.dgImportExcel.Size = new System.Drawing.Size(1004, 323);
             this.dgImportExcel.TabIndex = 0;
             // 
             // brnLoadExcel
@@ -128,14 +126,65 @@
             this.brnLoadExcel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.brnLoadExcel.BackColor = System.Drawing.Color.SeaShell;
             this.brnLoadExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brnLoadExcel.Location = new System.Drawing.Point(866, 14);
+            this.brnLoadExcel.Location = new System.Drawing.Point(692, 14);
             this.brnLoadExcel.Name = "brnLoadExcel";
-            this.brnLoadExcel.Size = new System.Drawing.Size(123, 30);
+            this.brnLoadExcel.Size = new System.Drawing.Size(297, 30);
             this.brnLoadExcel.TabIndex = 0;
-            this.brnLoadExcel.Text = "Учитај Ексел фајл";
+            this.brnLoadExcel.Text = "Учитај Ексел фајл попуни празнине и пребаци у џејсон";
             this.brnLoadExcel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.brnLoadExcel.UseVisualStyleBackColor = false;
             this.brnLoadExcel.Click += new System.EventHandler(this.brnLoadExcel_Click);
+            // 
+            // tpOther
+            // 
+            this.tpOther.BackColor = System.Drawing.Color.Honeydew;
+            this.tpOther.Location = new System.Drawing.Point(4, 22);
+            this.tpOther.Name = "tpOther";
+            this.tpOther.Padding = new System.Windows.Forms.Padding(3);
+            this.tpOther.Size = new System.Drawing.Size(1010, 601);
+            this.tpOther.TabIndex = 1;
+            this.tpOther.Text = "Other";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.dgImportExcel);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.rtbJSON);
+            this.splitContainer2.Size = new System.Drawing.Size(1004, 533);
+            this.splitContainer2.SplitterDistance = 323;
+            this.splitContainer2.TabIndex = 1;
+            // 
+            // rtbJSON
+            // 
+            this.rtbJSON.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbJSON.Location = new System.Drawing.Point(0, 0);
+            this.rtbJSON.Name = "rtbJSON";
+            this.rtbJSON.Size = new System.Drawing.Size(1004, 206);
+            this.rtbJSON.TabIndex = 0;
+            this.rtbJSON.Text = "";
+            // 
+            // btnSaveJson
+            // 
+            this.btnSaveJson.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSaveJson.BackColor = System.Drawing.Color.SeaShell;
+            this.btnSaveJson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveJson.Location = new System.Drawing.Point(22, 14);
+            this.btnSaveJson.Name = "btnSaveJson";
+            this.btnSaveJson.Size = new System.Drawing.Size(147, 30);
+            this.btnSaveJson.TabIndex = 1;
+            this.btnSaveJson.Text = "Сачувај џејсон";
+            this.btnSaveJson.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSaveJson.UseVisualStyleBackColor = false;
+            this.btnSaveJson.Click += new System.EventHandler(this.btnSaveJson_Click);
             // 
             // TestForm
             // 
@@ -157,6 +206,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgImportExcel)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,5 +225,8 @@
         private System.Windows.Forms.TabPage tpOther;
         private System.Windows.Forms.DataGrid dgImportExcel;
         private System.Windows.Forms.Button brnLoadExcel;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.RichTextBox rtbJSON;
+        private System.Windows.Forms.Button btnSaveJson;
     }
 }

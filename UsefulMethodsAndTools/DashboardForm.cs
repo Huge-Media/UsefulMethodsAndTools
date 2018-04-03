@@ -229,5 +229,17 @@ namespace UsefulMethodsAndTools
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void testAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new TestForm().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
